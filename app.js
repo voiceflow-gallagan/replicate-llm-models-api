@@ -30,7 +30,7 @@ app.post('/api', async (req, res) => {
     if (!prompt) {
       return res.status(400).json({ error: 'Prompt is required.' })
     }
-    console.log()
+    const startTime = process.hrtime()
     let output = await replicate.run(models[model].id, {
       input: {
         prompt,
@@ -46,13 +46,21 @@ app.post('/api', async (req, res) => {
     if (models[model].split === true) {
       output = output.join('')
     }
+    const elapsedTime = process.hrtime(startTime)
+    const elapsedTimeSec = elapsedTime[0] + elapsedTime[1] / 1e9
+    const elapsedTimeRounded = parseFloat(elapsedTimeSec.toFixed(2))
 
-    res.json({ success: true, response: output })
+    res.json({
+      success: true,
+      response: output,
+      processingTimeSec: elapsedTimeRounded,
+    })
   } catch (error) {
     console.error('Error generating output:', error)
     res.status(500).json({
       success: false,
       error: `An error occurred while processing your request. ${error}`,
+      processingTimeMs: elapsedTimeMs,
     })
   }
 })

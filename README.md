@@ -81,6 +81,7 @@ A JSON object containing the following fields:
 | --------- | ------- | ---------------------------- |
 | success   | Boolean | Whether the request succeeded |
 | response  | String  | The generated text output     |
+| processingTimeSec  | String  | The processing time in seconds     |
 | error     | String  | Error message (if any)        |
 
 **EXAMPLE REQUEST**
@@ -100,7 +101,8 @@ A JSON object containing the following fields:
 ```json
 {
   "success": true,
-  "response": "Dolly could have been any sheep, but she especially became famous because she was the first successfully cloned mammal\n\n"
+  "response": "Dolly could have been any sheep, but she especially became famous because she was the first successfully cloned mammal\n\n",
+  "processingTimeSec": 0.5,
 }
 ```
 

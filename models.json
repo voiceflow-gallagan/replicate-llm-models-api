@@ -23,5 +23,10 @@
     "id":"replicate/oasst-sft-1-pythia-12b:28d1875590308642710f46489b97632c0df55adb5078d43064e1dc0bf68117c3",
     "split":true,
     "info": "https://replicate.com/replicate/oasst-sft-1-pythia-12b"
+  },
+  "gpt-j-6b":{
+    "id":"replicate/gpt-j-6b:b3546aeec6c9891f0dd9929c2d3bedbf013c12e02e7dd0346af09c37e008c827",
+    "split":true,
+    "info": "https://replicate.com/replicate/gpt-j-6b"
   }
 }
