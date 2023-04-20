@@ -121,11 +121,17 @@ Of course, you can update the `model.json` file as you want to add/remove models
 | `gpt-j-6b` | EleutherAI |
 
 https://replicate.com/replicate/dolly-v2-12b
+
 https://replicate.com/stability-ai/stablelm-tuned-alpha-7b
+
 https://replicate.com/replicate/flan-t5-xl
+
 https://replicate.com/replicate/llama-7b
+
 https://replicate.com/replicate/oasst-sft-1-pythia-12b
+
 https://replicate.com/replicate/gpt-j-6b
+
 
 The `split` setting for each model can be set to true or false. It's used to join the response array into a string for model that returns an array of strings.
 
