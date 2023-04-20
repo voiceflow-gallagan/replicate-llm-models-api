@@ -1,33 +1,63 @@
 # Replicate LLM Model API | Voiceflow
 
-This code utilizes Open AI GPT, Langchain, HNSWLib and Cheerio to fetch web content from URLs, create embeddings/vectors and save them in a local database. The knowledge base can then be used with GPT to answer questions.
+A simple server built on Node.js using the Express framework that provides an interface to generate text using the Replicate library.
+The service receives text prompts and returns generated text based on the given prompt and the selected LLM model.
 
 
 ## Node.js
 If you are running this on Node.js 16, either:
 
-run your application with NODE_OPTIONS='--experimental-fetch' node ..., or
+run the application with NODE_OPTIONS='--experimental-fetch' node ..., or
 install node-fetch and follow the instructions <a href="https://github.com/node-fetch/node-fetch#providing-global-access" target="_blank" rel="noopener noreferrer">here</a>
 
 If you are running this on Node.js 18 or 19, you do not need to do anything.
 
 
 ## Setup
-Setup is simple, just run:
 
+To install and set up the repository, follow these steps:
+
+Clone the repository:
+
+```bash
+git clone https://github.com/user/repo.git
+cd repo
 ```
-npm i
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Create a .env file (or rename the .env.example) in the root directory with your REPLICATE_TOKEN:
+REPLICATE_TOKEN=your_replicate_token
+
+Replace **your_replicate_token** with your own token.
+
+(Optional) If you need to use a specific port number, add the PORT variable to your .env file:
+PORT=your_preferred_port
+
+Replace **PORT** value with your desired port number.
+
+
+## Usage
+
+Once you have the repository installed and environment variables set up, you can start the server using the command:
+
+```bash
 npm start
 ```
 
-This app requires an `.env` file with `PORT` and `REPLICATE_TOKEN`.
-You can rename the .env.example file to .env and fill in the values.
+It will start the server at http://localhost:PORT, where PORT is the value from your .env file or the default value 3210.
+
 
 ## Endpoint
 
 ### `/api`
 
 This endpoint allows a **POST** request with the **prompt**, the **model** name and the **settings** for this model.
+You can find more information about the settings from the models documentation below.
 
 **REQUEST**
 ```json
@@ -56,12 +86,18 @@ Here is a list of the models you can use with this API.
 Of course, you can update the `model.json` file as you want to add/remove models.
 
 | Model Name | Creator |
-| --- | --- | --- |
-| `dolly-v2-12b` | Databricks | https://replicate.com/replicate/dolly-v2-12b |
-| `stablelm-tuned-alpha-7b` | Stability AI | https://replicate.com/stability-ai/stablelm-tuned-alpha-7b |
-| `flan-t5-xl` | Google | https://replicate.com/replicate/flan-t5-xl |
-| `llama-7b` | Meta AI | https://replicate.com/replicate/llama-7b |
-| `oasst-sft-1-pythia-12b` | Open-Assistant | https://replicate.com/replicate/oasst-sft-1-pythia-12b |
+| --- | --- |
+| `dolly-v2-12b` | Databricks |
+| `stablelm-tuned-alpha-7b` | Stability AI |
+| `flan-t5-xl` | Google |
+| `llama-7b` | Meta AI |
+| `oasst-sft-1-pythia-12b` | Open-Assistant |
+
+https://replicate.com/replicate/dolly-v2-12b
+https://replicate.com/stability-ai/stablelm-tuned-alpha-7b
+https://replicate.com/replicate/flan-t5-xl
+https://replicate.com/replicate/llama-7b
+https://replicate.com/replicate/oasst-sft-1-pythia-12b
 
 The `split` setting for each model can be set to true or false. It's used to join the response array into a string for model that returns an array of strings.
 
