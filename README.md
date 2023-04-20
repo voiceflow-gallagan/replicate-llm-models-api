@@ -1,7 +1,7 @@
 # Replicate LLM Model API | Voiceflow
 
-A simple server built on Node.js using the Express framework that provides an interface to generate text using the Replicate library.
-The service receives text prompts and returns generated text based on the given prompt and the selected LLM model.
+A simple server built on Node.js using the Express framework that provides an interface to generate text using the [Replicate](https://replicate.com/) library.
+The service receives text prompts and returns the generated text based on the given prompt and the selected LLM model.
 
 
 ## Node.js
