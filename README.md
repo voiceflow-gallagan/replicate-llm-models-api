@@ -32,21 +32,21 @@ This endpoint allows a **POST** request with the **prompt**, the **model** name 
 **REQUEST**
 ```json
 {
-	"prompt":"Who was Dolly the sheep?",
-	"model":"dolly-v2-12b",
-	"max_tokens": 500,
+  "prompt":"Who was Dolly the sheep?",
+  "model":"dolly-v2-12b",
+  "max_tokens": 500,
   "top_p":1,
   "temperature": 0.75,
   "repetition_penalty": 1.2,
-	"decoding":"top_p"
+  "decoding":"top_p"
 }
 ```
 
 **RERSPONSE**
 ```json
 {
-	"success": true,
-	"response": "Dolly could have been any sheep, but she especially became famous because she was the first successfully cloned mammal\n\n"
+  "success": true,
+  "response": "Dolly could have been any sheep, but she especially became famous because she was the first successfully cloned mammal\n\n"
 }
 ```
 
@@ -55,8 +55,8 @@ This endpoint allows a **POST** request with the **prompt**, the **model** name 
 Here is a list of the models you can use with this API.
 Of course, you can update the `model.json` file as you want to add/remove models.
 
-| Model Name | Description |
-| --- | --- |
+| Model Name | Creator |
+| --- | --- | --- |
 | `dolly-v2-12b` | Databricks | https://replicate.com/replicate/dolly-v2-12b |
 | `stablelm-tuned-alpha-7b` | Stability AI | https://replicate.com/stability-ai/stablelm-tuned-alpha-7b |
 | `flan-t5-xl` | Google | https://replicate.com/replicate/flan-t5-xl |
