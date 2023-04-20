@@ -81,7 +81,7 @@ A JSON object containing the following fields:
 | --------- | ------- | ---------------------------- |
 | success   | Boolean | Whether the request succeeded |
 | response  | String  | The generated text output     |
-| processingTimeSec  | Number  | The processing time in seconds     |
+| processingTimeSec  | Float  | The processing time in seconds     |
 | error     | String  | Error message (if any)        |
 
 **EXAMPLE REQUEST**
