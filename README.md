@@ -59,7 +59,31 @@ It will start the server at http://localhost:PORT, where PORT is the value from 
 This endpoint allows a **POST** request with the **prompt**, the **model** name and the **settings** for this model.
 You can find more information about the settings from the models documentation below.
 
-**REQUEST**
+**Request**:
+
+| Parameter          | Type    | Description                                       | Default                    |
+| ------------------ | ------- | ------------------------------------------------- | -------------------------- |
+| prompt             | String  | Required. The text prompt for generation.        |                            |
+| model              | String  | Model identifier, available in \`models.json\`.    | "dolly-v2-12b"             |
+| max_tokens         | Integer | Maximum number of tokens to generate.            | 100                        |
+| max_length         | Integer | Maximum length of the generated text.            | 100                        |
+| top_p              | Float   | Top-p sampling value.                             | 1                          |
+| top_k              | Integer | Top-k sampling value.                             |                            |
+| decoding           | String  | Decoding strategy, either "top_p" or "top_k".    | "top_p"                    |
+| temperature        | Float   | Softmax temperature.                              | 0.75                       |
+| repetition_penalty | Float   | Penalty for repetitive tokens.                   | 1.2                         |
+
+**Response**:
+
+A JSON object containing the following fields:
+
+| Field     | Type    | Description                  |
+| --------- | ------- | ---------------------------- |
+| success   | Boolean | Whether the request succeeded |
+| response  | String  | The generated text output     |
+| error     | String  | Error message (if any)        |
+
+**EXAMPLE REQUEST**
 ```json
 {
   "prompt":"Who was Dolly the sheep?",
@@ -72,7 +96,7 @@ You can find more information about the settings from the models documentation b
 }
 ```
 
-**RERSPONSE**
+**EXAMPLE RERSPONSE**
 ```json
 {
   "success": true,
